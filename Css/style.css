@@ -1,0 +1,128 @@
+body {
+    position: relative; /* За позициониране на side-menu */
+}
+
+.side-menu-toggle {
+    display: none; /* Скриване на side-menu-toggle по подразбиране */
+    flex-direction: column;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333;
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.side-menu {
+    display: none; /* Скриване на side-menu по подразбиране */
+    flex-direction: column;
+    background-color: #f0f0f0;
+    position: fixed; /* Фиксирано позициониране */
+    top: 0;
+    right: -250px; /* Скриване извън екрана */
+    width: 250px;
+    height: 100%;
+    padding-top: 60px;
+    transition: right 0.4s ease; /* Плавна анимация */
+}
+
+.side-menu.active {
+    display: flex;
+    right: 0; /* Показване на менюто */
+}
+
+.side-menu a {
+    color: #333;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: block;
+}
+
+.side-menu a:hover {
+    background-color: #ddd;
+}
+
+/* JavaScript класове за анимация и показване/скриване */
+.side-menu-toggle.active .bar:nth-child(1) {
+    transform: rotate(-45deg) translate(-5px, 6px);
+}
+
+.side-menu-toggle.active .bar:nth-child(2) {
+    opacity: 0;
+}
+
+.side-menu-toggle.active .bar:nth-child(3) {
+    transform: rotate(45deg) translate(-5px, -6px);
+}
+
+/* Медийни заявки за показване на side-menu-toggle на малки екрани */
+@media (max-width: 768px) {
+    .side-menu-toggle {
+        display: flex;
+    }
+
+    nav {
+        display: none; /* Скриване на основната навигация */
+    }
+}
+
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 1em;
+    text-align: center;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5em 1em;
+}
+
+nav a:hover {
+    background-color: #555;
+}
+
+main {
+    width: 80%;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+    margin-bottom: 20px;
+}
+
+h2 {
+    color: #333;
+}
+
+ul, table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table, th, td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+footer {
+    text-align: center;
+    padding: 1em 0;
+    background-color: #333;
+    color: #fff;
+}
